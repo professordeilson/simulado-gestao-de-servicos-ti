@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulado BPGT Segurança</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <div class="brand">Simulado de Certificação<small>Técnico em Redes · Boas Práticas e Gestão de TI</small></div>
+    <div class="timer" id="timer" hidden><span>Tempo</span><output id="clock">00:00</output></div>
+  </div>
+  <div class="progress"><i id="prog"></i></div>
+</header>
+
+<main class="wrap">
+  <!-- INÍCIO -->
+  <section class="screen intro" id="s-start">
+    <div class="eyebrow">Segurança de Dados · Vírus e Antivírus · Segurança do Trabalho</div>
+    <h1>Simulado de Segurança da Informação</h1>
+    <div class="facts">
+      <div class="fact"><b>30</b><span>questões</span></div>
+      <div class="fact"><b>25 + 5</b><span>múltipla escolha + arrastar e soltar</span></div>
+      <div class="fact"><b>70%</b><span>aproveitamento para aprovação</span></div>
+    </div>
+    <div class="rules">
+      <strong>Como funciona</strong>
+      <ul>
+        <li>O cronômetro começa quando você clica em <b>Iniciar prova</b>.</li>
+        <li>Navegue livremente entre as questões e use <b>Marcar para revisão</b> nas que quiser rever.</li>
+        <li>Nas questões de arrastar e soltar, arraste cada item até o lugar certo. No celular, toque no item e depois toque no destino.</li>
+        <li>Questões de arrastar só contam como certas se todos os itens estiverem no lugar correto.</li>
+        <li>Ao finalizar, você vê sua nota, o tempo de prova e a explicação de cada questão errada.</li>
+      </ul>
+    </div>
+    <div class="field">
+      <label for="nome">Seu nome (opcional)</label>
+      <input id="nome" type="text" autocomplete="name" placeholder="Ex.: Ana Souza">
+    </div>
+    <div><button class="btn" id="b-start">Iniciar prova</button></div>
+  </section>
+
+  <!-- PROVA -->
+  <section class="screen exam" id="s-exam" hidden>
+    <article class="card" id="qcard" aria-live="polite"></article>
+    <aside class="side">
+      <h3>Questões</h3>
+      <div class="grid" id="navgrid"></div>
+      <div class="legend">
+        <div><i style="background:var(--blue-soft);border-color:#b8d3ee"></i>Respondida</div>
+        <div><i style="background:var(--flag);border-color:var(--flag);border-radius:50%"></i>Marcada para revisão</div>
+      </div>
+      <div class="legend" id="count"></div>
+      <button class="btn" id="b-finish">Finalizar prova</button>
+    </aside>
+  </section>
+
+  <!-- RESULTADO -->
+  <section class="screen" id="s-result" hidden></section>
+</main>
+
+<div class="modal" id="modal" hidden>
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="mtitle">
+    <h2 id="mtitle" style="font-size:24px;color:var(--blue)">Finalizar a prova?</h2>
+    <p id="mtext" style="margin:0"></p>
+    <div class="row">
+      <button class="btn ghost" id="m-no">Continuar respondendo</button>
+      <button class="btn" id="m-yes">Finalizar</button>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
